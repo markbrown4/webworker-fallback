@@ -1,4 +1,5 @@
 (function(window) {
+  // comment out to test polyfill?
   if (typeof window.Worker !== 'undefined') return;
   if (console && console.log) console.log('!! Using web worker fallback');
 
