@@ -21,4 +21,9 @@ function appThread(self) {
   }
 }
 
+let inWorkerContext = !self.location
+if (inWorkerContext) {
+  appThread(self)
+}
+
 export default appThread;
