@@ -1,6 +1,9 @@
 (function(window) {
-  // comment out to test polyfill?
-  if (typeof window.Worker !== 'undefined') return;
+
+  // set to true to test polyfill
+  var forceSingleThread = false;
+
+  if (!forceSingleThread && typeof window.Worker !== 'undefined') return;
   if (console && console.log) console.log('!! Using web worker fallback');
 
   var WW_CONTEXT_WHITELIST = [

@@ -1,11 +1,13 @@
 
+A test case for https://github.com/typpo/web-workers-fallback
+
 ```bash
 npm install
 npm run build
 npm run server
 ```
 
-Comment out the feature detection in `dist/worker.js`
+Set `forceSingleThread` to true in `worker-polyfill.js` to test polyfill
 
 ```js
 if (typeof window.Worker !== 'undefined') return;
