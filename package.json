@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel ./src -d ./dist",
-    "watch": "babel ./src -d ./dist -w",
+    "babelify": "babel ./src -d ./dist",
+    "browserifyEntry": "browserify ./dist/entry.js -o ./dist/entry.bundle.js",
+    "browserifyThread": "browserify ./dist/app-thread.js -o ./dist/app-thread.bundle.js",
+    "browserify": "npm run browserifyEntry && npm run browserifyThread",
+    "build": "npm run babelify && npm run browserify",
     "server": "live-server"
   },
   "keywords": [],

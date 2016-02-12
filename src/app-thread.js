@@ -14,7 +14,11 @@ let updateState = ({ type, payload={} })=> {
   return state;
 }
 
-self.onmessage = ({data}) => {
-  let state = updateState(data)
-  self.postMessage(state)
+function appThread(self) {
+  self.onmessage = ({data}) => {
+    let state = updateState(data)
+    self.postMessage(state)
+  }
 }
+
+export default appThread;
