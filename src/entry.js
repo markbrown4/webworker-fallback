@@ -3,7 +3,7 @@ import WorkerProxy from './worker-proxy.js';
 import appThread from './app-thread.js';
 import uiThread from './ui-thread.js';
 
-let forceSingleThread = true;
+let forceSingleThread = false;
 
 if (!forceSingleThread && window.Worker) {
   let worker = new Worker('dist/app-thread.bundle.js')

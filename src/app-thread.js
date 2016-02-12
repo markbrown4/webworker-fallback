@@ -21,7 +21,7 @@ function appThread(self) {
   }
 }
 
-let inWorkerContext = !self.location
+let inWorkerContext = self.document === undefined
 if (inWorkerContext) {
   appThread(self)
 }
